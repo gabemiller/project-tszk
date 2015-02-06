@@ -1,0 +1,138 @@
+body{
+    background-color: #EBEBEB;
+}
+
+html,body{
+    position: relative;
+    height: 100%;
+}
+
+.login-container{
+    position: relative;
+    width: 300px;
+    margin: 80px auto 30px;
+    padding: 20px 40px 40px;
+    text-align: center;
+    background: #fff;
+    border: 1px solid #ccc;
+}
+
+#output{
+    position: absolute;
+    width: 300px;
+    top: -75px;
+    left: 0;
+    color: #fff;
+}
+
+#output.alert-success{
+    background-color: rgb(25, 204, 25);
+}
+
+#output.alert-danger{
+    background-color: rgb(228, 105, 105);
+}
+
+
+.login-container::before,
+.login-container::after{
+    content: "";
+    position: absolute;
+    width: 100%;height: 100%;
+    top: 3.5px;left: 0;
+    background: #fff;
+    z-index: -1;
+    -webkit-transform: rotateZ(4deg);
+    -moz-transform: rotateZ(4deg);
+    -ms-transform: rotateZ(4deg);
+    border: 1px solid #ccc;
+
+}
+
+.login-container::after{
+    top: 5px;
+    z-index: -2;
+    -webkit-transform: rotateZ(-2deg);
+    -moz-transform: rotateZ(-2deg);
+    -ms-transform: rotateZ(-2deg);
+
+}
+
+.avatar{
+    width: 100px;
+    height: 100px;
+    margin: 10px auto 30px;
+    background: url(../../assets/divide_logo_admin.png) center center transparent no-repeat;
+    background-size: cover;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    -ms-border-radius: 100%;
+    -o-border-radius: 100%;
+    border-radius: 100%;
+}
+
+.form-login input{
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    height:40px;
+    border: 1px solid #ccc;;
+    background: #fafafa;
+}
+
+.form-login input:focus{
+    outline: 0;
+    background: #eee;
+    border-color: #3c8dbc !important;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+.form-login input[type="text"]{
+    border-radius: 0;
+}
+
+.form-login input[type="password"]{
+    border-radius: 0;
+    margin-top:15px;
+}
+
+.form-login .btn-login{
+    margin-top:15px;
+    padding: 10px 20px;
+}
+
+
+.btn-divide {
+    background-color: #479f00;
+    border-color: #479f00;
+    color: #fff !important;
+}
+.btn-divide:hover,
+.btn-divide:focus,
+.btn-divide:active,
+.btn-divide.active {
+    background-color: #3c8600;
+    border-color: #306c00;
+    color: #fff;
+}
+.btn-divide.disabled:hover,
+.btn-divide.disabled:focus,
+.btn-divide.disabled:active,
+.btn-divide.disabled.active,
+.btn-divide[disabled]:hover,
+.btn-divide[disabled]:focus,
+.btn-divide[disabled]:active,
+.btn-divide[disabled].active,
+fieldset[disabled] .btn-divide:hover,
+fieldset[disabled] .btn-divide:focus,
+fieldset[disabled] .btn-divide:active,
+fieldset[disabled] .btn-divide.active {
+    background-color: #479f00;
+    border-color: #479f00;
+    color: #999;
+}
+
+
+

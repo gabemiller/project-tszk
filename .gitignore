@@ -1,0 +1,9 @@
+app/config/developement
+app/config/testing
+app/assets
+vendor/*
+.idea
+gulpfile.js
+node_modules
+_ide_helper.php
+server.php
