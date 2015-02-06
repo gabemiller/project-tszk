@@ -55,9 +55,9 @@ return array(
 		'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
-			'database'  => 'divide_egke_cms',
+			'database'  => 'divide_tszk_cms',
 			'username'  => 'forge',
-			'password'  => 'AF9eDfhkIWXbUYJppKtF',
+			'password'  => 'Z3P3otFt6RWKsQ6u4hoK',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_hungarian_ci',
 			'prefix'    => '',

@@ -24,10 +24,10 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-12">
-                <img class="no-border" src="assets/cross.svg" alt="Görögkatolikus kereszt">
-                <h2>Encsi Görögkatolikus Egyházközség</h2>
-                <h3>Dicsőség Jézus Krisztusnak!</h3>
-                <h1>Weboldalunk hamarosan megnyitja kapuit.<br>Kérem látogasson vissza később!</h1>
+                <i class="fa fa-warning fa-5x"></i>
+                <h2>{{Setting::get('site-title')}}</h2>
+                <h1>Weboldalunk jelenleg karbantartás alatt áll.<br>Kérem látogasson vissza később!</h1>
+                <img class="img-responsive" src="{{URL::to('assets/tszk.jpg')}}" alt="{{Setting::get('site-title')}}">
             </div>
         </div>
     </div>

@@ -23,7 +23,7 @@ return array(
       | your application so that it is used when running Artisan tasks.
       |
      */
-    'url' => 'http://encsgorkat.hu',
+    'url' => 'http://spetertszk.hu',
     /*
       |--------------------------------------------------------------------------
       | Application Timezone
@@ -67,7 +67,7 @@ return array(
       | will not be safe. Please do this before deploying an application!
       |
      */
-    'key' => 'LjD9i3vOrMvlLfISDFySmXUCjvLktbKk',
+    'key' => 'jHtvgBCPvcZFa60V5etb6mqzZMzj9uwp',
     'cipher' => MCRYPT_RIJNDAEL_128,
     /*
       |--------------------------------------------------------------------------
