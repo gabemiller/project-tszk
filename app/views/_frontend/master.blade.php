@@ -12,7 +12,7 @@
     {{ HTML::script('//html5shim.googlecode.com/svn/trunk/html5.js') }}
     <![endif]-->
     {{
-    HTML::style('http://fonts.googleapis.com/css?family=Open+Sans:400,700&subset=latin,latin-ext')
+    HTML::style('http://fonts.googleapis.com/css?family=Slabo+27px|Roboto:400,700&subset=latin,latin-ext')
     }}
     {{ HTML::style('css/bootstrap.min.css') }}
     {{ HTML::style('css/divide.min.css') }}
@@ -23,15 +23,18 @@
 @include('_frontend.lightbox')
 @include('_frontend.header')
 <div class="container main-container">
+
     <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="col-xs-12">
             @yield('breadcrumb')
         </div>
     </div>
 
     <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            @yield('content')
+        <div class="col-xs-12">
+            <div class="main-content">
+                @yield('content')
+            </div>
         </div>
     </div>
 </div>

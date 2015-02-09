@@ -10,7 +10,7 @@
  */
 
 Breadcrumbs::register('fooldal', function($breadcrumbs) {
-    $breadcrumbs->push('<i class="fa fa-home"></i>', route('fooldal'));
+    $breadcrumbs->push('Főoldal', route('fooldal'));
 });
 
 Breadcrumbs::register('hirek.show', function($breadcrumbs,$article) {
