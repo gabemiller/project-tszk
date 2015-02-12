@@ -1,5 +1,5 @@
 <header>
-    <h1>{{Setting::get('site-title')}}</h1>
+    <h1 class="title">{{Setting::get('site-title')}}</h1>
 </header>
 <nav class="main-navbar">
     <div class="container">
