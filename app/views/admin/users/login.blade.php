@@ -10,14 +10,14 @@
         {{ HTML::style('css/divide-admin.login.css'); }}
     </head>
     <body>
-        <div class="container animated flipInX">
+        <div class="container">
             <div class="login-container">
                 @if(Session::has('error'))
                 <div class="alert alert-danger">
                     {{Session::get('error')}}
                 </div>
                 @endif
-                <div class="avatar animated" style="visibility: hidden"></div>
+                <div class="avatar"></div>
                 <div class="form-box">
                     {{Form::open(array('url' => URL::route('admin.bejelentkezes'),'class'=>'form-horizontal form-login','method'=>'POST'))}}
 

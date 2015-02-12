@@ -113,11 +113,15 @@ Route::group(array('prefix' => 'admin', 'namespace' => 'Admin', 'before' => 'use
 
     Route::resource('galeria', 'GalleryController');
 
-    Route::get('galeria/kep/{id}/upload', ['uses' => 'GalleryController@getPicture', 'as' => 'admin.galeria.kep.upload'])->where('id', '[0-9]+');
+    Route::get('galeria/kep/{id}/upload', ['uses' => 'GalleryController@getPicture', 'as' => 'admin.galeria.kep.upload']);
 
     Route::post('galeria/kep/save', ['uses' => 'GalleryController@postPicture', 'as' => 'admin.galeria.kep.save']);
 
-    Route::post('galeria/kep/{id}/delete', ['uses' => 'GalleryController@deletePicture', 'as' => 'admin.galeria.kep.delete'])->where('id', '[0-9]+');
+    Route::post('galeria/kep/{id}/delete', ['uses' => 'GalleryController@deletePicture', 'as' => 'admin.galeria.kep.delete']);
+
+    Route::get('beallitas', ['uses' => 'SettingsController@index', 'as' => 'admin.beallitas']);
+
+    Route::post('beallitas/karbantartas', ['uses' => 'SettingsController@postMaintenance', 'as' => 'admin.karbantartas']);
 
     /**
      * Felhasználók kezeléséhez tartozó route-ok.
@@ -236,6 +240,12 @@ if (Request::is('admin') || Request::is('admin/*')) {
             ['route' => 'admin.felhasznalok.felhasznalo.index'])
             ->prepend('<i class="fa fa-angle-double-right "></i> ');
 
+        /**
+         * Beállítások menüpont
+         */
+
+        $menu->add('Beállítások', ['route' => 'admin.beallitas'])
+            ->prepend('<i class="fa fa-wrench"></i> ');
 
     });
 }

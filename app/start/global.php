@@ -62,7 +62,7 @@ App::error(function (Exception $exception, $code) {
 */
 
 App::down(function () {
-    if (Request::is('admin*')) {
+    if (Request::is('admin*') || (Input::has('debug'))) {
         return null;
     }
 

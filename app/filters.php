@@ -22,7 +22,6 @@ App::before(function ($request) {
         View::share('user', \Divide\CMS\User::find(\Sentry::getUser()->id));
     }
 
-
     /*if (Request::path() != 'hamarosan') {
         return Redirect::to('hamarosan');
     }*/
