@@ -26,7 +26,7 @@
             <div class="col-xs-12">
                 <i class="fa fa-warning fa-5x"></i>
                 <h2>{{Setting::get('site-title')}}</h2>
-                <h1>Weboldalunk jelenleg karbantartás alatt áll.<br>Kérem látogasson vissza később!</h1>
+                <h2>Weboldalunk jelenleg karbantartás alatt áll.<br>Kérem látogasson vissza később!</h2>
                 <img class="img-responsive" src="{{URL::to('assets/tszk.jpg')}}" alt="{{Setting::get('site-title')}}">
             </div>
         </div>
