@@ -122,7 +122,13 @@
                                 <p class="help-block">Egy oldalt választhatunk ki a címe alapján.</p>
                             </div>
                         </div>
-                        <div class="tab-pane" id="dokumentumok"></div>
+                        <div class="tab-pane" id="dokumentumok">
+                            {{Form::label('document_category_id', 'Dokumentum kategória',array('class'=>'control-label'))}}
+                            <div>
+                                {{Form::select('document_category_id', $documentCategories,null,array('class'=>'form-control'))}}
+                                <p class="help-block">Egy kategóriát választhatunk ki a neve alapján.</p>
+                            </div>
+                        </div>
                     </div>
 
                 </div>

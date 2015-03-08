@@ -12,7 +12,7 @@
     {{ HTML::script('//html5shim.googlecode.com/svn/trunk/html5.js') }}
     <![endif]-->
     {{
-    HTML::style('http://fonts.googleapis.com/css?family=Slabo+27px|Roboto:400,700&subset=latin,latin-ext')
+    HTML::style('http://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,latin-ext')
     }}
     {{ HTML::style('css/bootstrap.min.css') }}
     {{ HTML::style('css/divide.min.css') }}
