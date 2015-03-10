@@ -15,7 +15,7 @@
             <h4>Galéria</h4>
 
             <div class="page-gallery">
-                <div class="page-carousel owl-carousel">
+                <div class="gallery-carousel owl-carousel">
                     @foreach($page->gallery->pictures as $picture)
                         <div>
                             <a href="{{URL::to($picture->picture_path)}}" title="{{$picture->name}}" data-gallery>

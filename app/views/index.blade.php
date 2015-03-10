@@ -13,7 +13,7 @@
                     <p class="text-muted">{{$article->getCreatedAt()}}</p>
                     <h2 class="title">{{HTML::link($article->getLink(),$article->title)}}</h2>
                     <p class="article-content">{{$article->content}}</p>
-                    {{HTML::linkRoute('hirek.show','Bővebben',array('id'=>$article->id,'title'=>\Str::slug($article->title)),array('class'=>'btn btn-sm btn-more'))}}
+                    {{HTML::linkRoute('hirek.show','Bővebben',array('id'=>$article->id,'title'=>\Str::slug($article->title)),array('class'=>'btn btn-sm btn-darkgrey'))}}
                 </div>
             </div>
         @endforeach

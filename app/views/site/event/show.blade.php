@@ -12,18 +12,20 @@
     </div>
 
     @if(count($event->gallery)!=0 && count($event->gallery->pictures)!=0)
-    <h4>Galéria</h4>
-    <div class="event-gallery">
-        <ul class="row list-unstyled">
-            @foreach($event->gallery->pictures as $picture)
-            <li class="col-lg-2 col-md-2 col-sm-3 col-xs-4">
-                <a href="{{$picture->picture_path}}" title="{{$picture->name}}" data-gallery>
-                    <img class="img-responsive" src="{{$picture->thumbnail_path}}" alt="{{$picture->name}}" title="{{$picture->name}}" />
-                </a>
-            </li>
-            @endforeach
-        </ul>
-    </div>
+        <h4>Galéria</h4>
+
+        <div class="event-gallery">
+            <div class="gallery-carousel owl-carousel">
+                @foreach($event->gallery->pictures as $picture)
+                    <div>
+                        <a href="{{URL::to($picture->picture_path)}}" title="{{$picture->name}}" data-gallery>
+                            <img class="img-responsive" src="{{URL::to($picture->thumbnail_path)}}" alt="{{$picture->name}}"
+                                 title="{{$picture->name}}"/>
+                        </a>
+                    </div>
+                @endforeach
+            </div>
+        </div>
     @endif
 
     <div id="disqus_thread"></div>
