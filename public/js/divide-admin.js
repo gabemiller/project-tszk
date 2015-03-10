@@ -55,7 +55,7 @@ $(function () {
      */
 
     $('.ckeditor').ckeditor({
-        'filebrowserBrowseUrl': '/elfinder/ckeditor4',
+        'filebrowserBrowseUrl': '/admin/elfinder/ckeditor4',
         'contentsCss': '/ckeditor/css/bootstrap.css',
         'removePlugins': 'scayt',
         'skin': 'bootstrapck',

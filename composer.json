@@ -13,7 +13,8 @@
         "philf/setting": "dev-master",
         "jenssegers/date": "*",
         "lavary/laravel-menu": "1.5.0",
-        "intervention/imagecache": "~2.1"
+        "intervention/imagecache": "~2.1",
+        "barryvdh/laravel-elfinder": "0.2.*"
     },
     "require-dev": {
         "way/generators": "2.*",

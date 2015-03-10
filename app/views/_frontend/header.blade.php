@@ -8,3 +8,8 @@
         </ul>
     </div>
 </nav>
+<div class="breadcrumb-container">
+    <div class="container">
+        @yield('breadcrumb')
+    </div>
+</div>

@@ -26,12 +26,6 @@
 
     <div class="row">
         <div class="col-xs-12">
-            @yield('breadcrumb')
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-xs-12">
             <div class="main-content">
                 @yield('content')
             </div>

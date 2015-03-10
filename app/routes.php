@@ -92,6 +92,19 @@ Route::group(array('prefix' => 'admin', 'namespace' => 'Admin'), function () {
     Route::get('kijelentkezes', ['uses' => 'UsersController@getLogout', 'as' => 'admin.kijelentkezes']);
 });
 
+Route::group(array('prefix' => 'admin', 'before' => 'userNotLoggedIn|inGroup:Admin'), function () {
+
+    /**
+     * Fájlmanagerhez tarozó route-ok.
+     */
+    Route::get('elfinder', 'Barryvdh\Elfinder\ElfinderController@showIndex');
+
+    Route::any('elfinder/connector', 'Barryvdh\Elfinder\ElfinderController@showConnector');
+
+    Route::get('elfinder/ckeditor4', 'Barryvdh\Elfinder\ElfinderController@showCKeditor4');
+
+});
+
 Route::group(array('prefix' => 'admin', 'namespace' => 'Admin', 'before' => 'userNotLoggedIn|inGroup:Admin'), function () {
 
     /**
