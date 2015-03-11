@@ -13,16 +13,24 @@ Breadcrumbs::register('fooldal', function($breadcrumbs) {
     $breadcrumbs->push('Főoldal', route('fooldal'));
 });
 
-Breadcrumbs::register('hirek.show', function($breadcrumbs,$article) {
+
+/**
+ * Hírek
+ */
+
+Breadcrumbs::register('hirek.index', function($breadcrumbs) {
     $breadcrumbs->parent('fooldal');
+    $breadcrumbs->push('Hírek', route('hirek.index'));
+});
+
+Breadcrumbs::register('hirek.show', function($breadcrumbs,$article) {
+    $breadcrumbs->parent('hirek.index');
     $breadcrumbs->push($article->title, route('hirek.show',$article->id));
 });
 
-Breadcrumbs::register('hirek.tag', function($breadcrumbs,$tag) {
-    $breadcrumbs->parent('fooldal');
-    $breadcrumbs->push('Hírek', route('fooldal'));
-    $breadcrumbs->push($tag->name,route('hirek.tag',$tag->slug));
-});
+/**
+ * Események
+ */
 
 Breadcrumbs::register('esemenyek.index', function($breadcrumbs) {
     $breadcrumbs->parent('fooldal');
@@ -34,10 +42,9 @@ Breadcrumbs::register('esemenyek.show', function($breadcrumbs,$event) {
     $breadcrumbs->push($event->title, route('esemenyek.show',$event->id));
 });
 
-Breadcrumbs::register('esemenyek.tag', function($breadcrumbs,$tag) {
-    $breadcrumbs->parent('esemenyek.index');
-    $breadcrumbs->push($tag->name,route('hirek.tag',$tag->slug));
-});
+/**
+ * Galériák
+ */
 
 Breadcrumbs::register('galeriak.index', function($breadcrumbs) {
     $breadcrumbs->parent('fooldal');
@@ -49,9 +56,27 @@ Breadcrumbs::register('galeriak.show', function($breadcrumbs,$gallery) {
     $breadcrumbs->push($gallery->name, route('galeriak.show',$gallery->id));
 });
 
+/**
+ * Oldalak
+ */
+
 Breadcrumbs::register('oldalak.show', function($breadcrumbs,$page) {
     $breadcrumbs->parent('fooldal');
     $breadcrumbs->push($page->title, route('oldalak.show',$page->id));
+});
+
+/**
+ * Dokumentumok
+ */
+
+Breadcrumbs::register('dokumentumok.index', function($breadcrumbs) {
+    $breadcrumbs->parent('fooldal');
+    $breadcrumbs->push('Dokumentumok', route('dokumentumok.index'));
+});
+
+Breadcrumbs::register('dokumentumok.category', function($breadcrumbs,$category) {
+    $breadcrumbs->parent('dokumentumok.index');
+    $breadcrumbs->push($category->name, route('dokumentumok.index',$category->id));
 });
 
 /**

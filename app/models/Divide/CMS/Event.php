@@ -3,16 +3,19 @@
 namespace Divide\CMS;
 
 use Str;
+use Date;
+use URL;
 
 /**
  * Divide\CMS\Event
  *
  * @property-read \Divide\CMS\Gallery $gallery
  * @property-read \Illuminate\Database\Eloquent\Collection|\Conner\Tagging\Tagged[] $tagged
- * @method static \Divide\CMS\Event withAllTags($tagNames) 
- * @method static \Divide\CMS\Event withAnyTag($tagNames) 
+ * @method static \Divide\CMS\Event withAllTags($tagNames)
+ * @method static \Divide\CMS\Event withAnyTag($tagNames)
  */
-class Event extends \Eloquent {
+class Event extends \Eloquent
+{
 
     use \Conner\Tagging\TaggableTrait;
 
@@ -26,7 +29,8 @@ class Event extends \Eloquent {
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function gallery() {
+    public function gallery()
+    {
         return $this->belongsTo('Divide\CMS\Gallery');
     }
 
@@ -34,7 +38,8 @@ class Event extends \Eloquent {
     /**
      * @return int|mixed
      */
-    public function getGalleryId(){
+    public function getGalleryId()
+    {
         return $this->gallery_id == 0 ? 0 : $this->gallery->id;
     }
 
@@ -42,8 +47,9 @@ class Event extends \Eloquent {
     /**
      * @return string
      */
-    public function getLink(){
-        return 'esemenyek/'.$this->id.'/'.Str::slug($this->title);
+    public function getLink()
+    {
+        return URL::route('esemenyek.show', array('id' => $this->id, 'title' => Str::slug($this->title)));
     }
 
     /**
@@ -53,7 +59,7 @@ class Event extends \Eloquent {
      */
     public function getParragraph($words = 50, $end = '...')
     {
-        return Str::words(trim(preg_replace('/<[^>]*>/',' ',$this->content)),$words,$end);
+        return Str::words(trim(preg_replace('/<[^>]*>/', ' ', $this->content)), $words, $end);
     }
 
     /**
@@ -86,6 +92,37 @@ class Event extends \Eloquent {
     public function getUpdatedAt($format = 'Y. F j., l H:i')
     {
         return (new Date($this->updated_at))->format($format);
+    }
+
+    /**
+     * @param string $format
+     * @return string
+     */
+    public function getStartAt($format = 'Y. F j., l H:i')
+    {
+        return (new Date($this->start_at))->format($format);
+    }
+
+    /**
+     * @param string $format
+     * @return string
+     */
+    public function getEndAt($format = 'Y. F j., l H:i')
+    {
+        return (new Date($this->end_at))->format($format);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function isNowActive()
+    {
+        $now = new Date('now');
+        $start = new Date($this->start_at);
+        $end = new Date($this->end_at);
+
+        return $now->between($start, $end);
     }
 
 }

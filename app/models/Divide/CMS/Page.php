@@ -3,6 +3,7 @@
 namespace Divide\CMS;
 
 use Str;
+use Date;
 
 /**
  * Divide\CMS\Page

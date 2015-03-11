@@ -5,7 +5,8 @@
 @section('content')
     <div class="page">
 
-        <h1>{{$page->title}}</h1>
+        <p class="text-muted small">(Utoljára frissítve: {{$page->getUpdatedAt()}})</p>
+        <h1 class="title">{{$page->title}}</h1>
 
         <div class="page-content">
             {{$page->content}}

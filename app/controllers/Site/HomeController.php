@@ -2,7 +2,7 @@
 
 namespace Site;
 
-use Divide\CMS\Article;
+use Divide\CMS\Page;
 use View;
 
 class HomeController extends \BaseController {
@@ -18,13 +18,10 @@ class HomeController extends \BaseController {
     public function index() {
         View::share('title', 'Főoldal');
 
-        $article = Article::where('published', '=', true)
-            ->orderBy('created_at', 'DESC')
-            ->select(['id', 'title', 'author_id', 'created_at', 'content','gallery_id'])
-            ->take(2)->get();
+        $page = Page::find(4);
 
         $this->layout->content = View::make('index')
-            ->with('articles', $article);
+            ->with('page', $page);
     }
 
 }

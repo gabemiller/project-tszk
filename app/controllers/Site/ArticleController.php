@@ -61,7 +61,7 @@ class ArticleController extends \BaseController {
             ->orderBy('created_at','desc')
             ->paginate(6);
 
-        $this->layout->content = View::make('site.article.tag')
+        $this->layout->content = View::make('site.article.index')
             ->with('articles',$article)
             ->with('tag',$tag);
     }

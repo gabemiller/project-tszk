@@ -6,11 +6,19 @@
 @section('content')
 <div class="article">
 
-    <p class="text-muted date">{{$article->getCreatedAt()}}</p>
+    <p class="text-muted date">{{$article->getCreatedAt()}}, {{$article->author->last_name}} {{$article->author->first_name}}</p>
     <h1 class="title">{{HTML::link($article->getLink(),$article->title)}}</h1>
 
     <div class="article-content">
         {{$article->content}}
+    </div>
+
+    <div class="labels">
+        @if(sizeof($article->tagNames()) > 0)
+            @foreach(\Divide\Helper\Tag::getTagByName($article->tagNames()) as $tag)
+                <span class="label label-greywhite">{{HTML::linkRoute('hirek.tag',$tag->name,array('id'=>$tag->id,'tagSlug'=>\Str::slug($tag->slug)))}}</span>
+            @endforeach
+        @endif
     </div>
 
     @if(count($article->gallery)!=0 && count($article->gallery->pictures)!=0)

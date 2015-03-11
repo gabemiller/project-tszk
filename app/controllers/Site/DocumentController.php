@@ -24,21 +24,22 @@ class DocumentController extends \BaseController
 
         if (isset($category)) {
 
-            $cat = DocumentCategory::where('slug','=',$category)->first();
+            $cat = DocumentCategory::where('slug', '=', $category)->first();
 
-            $doc = Document::whereHas('categories', function ($q) use($cat) {
+            $doc = Document::whereHas('categories', function ($q) use ($cat) {
                 $q->where('documentcategory_id', '=', $cat->id);
 
-            })->orderBy('created_at','desc')->get();
+            })->orderBy('created_at', 'desc')->get();
 
 
         } else {
-            $doc = Document::orderBy('created_at','desc')->get();
+            $cat = null;
+            $doc = Document::orderBy('created_at', 'desc')->get();
         }
 
         $this->layout->content = View::make('site.document.index')
             ->with('documents', $doc)
-            ->with('categories', DocumentCategory::all(['id','name','slug']));
+            ->with('category', $cat);
     }
 
 }
