@@ -25,5 +25,7 @@
                     </div>
                 </div>
             </div>
+
+            {{HTML::link('http://divide.hu','Divide.hu',['class'=>'divide-bottom-logo','target'=>'_blank'])}}
         </div>
 </footer>
