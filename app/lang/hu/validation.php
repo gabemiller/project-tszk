@@ -100,6 +100,17 @@ return array(
     |
     */
 
-    'attributes' => array(),
+    'attributes' => array(
+        'name' => 'név',
+        'title' => 'cím',
+        'content' => 'tartalom',
+        'author' => 'szerző',
+        'file' => 'fájl',
+        'first_name' => 'keresztnév',
+        'last_name' => 'vezetéknév',
+        'email' => 'email cím',
+        'phone' => 'telefonszám',
+        'category' => 'kategória'
+    ),
 
 );

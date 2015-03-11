@@ -79,14 +79,13 @@ class Article extends \Eloquent
     }
 
     /**
-     *
-     * @param type $characters
-     * @param type $end
-     * @return type
+     * @param int $words
+     * @param string $end
+     * @return string
      */
-    public function getParragraph($characters = 500, $end = '...')
+    public function getParragraph($words = 50, $end = '...')
     {
-        return Str::limit(strip_tags($this->content), $characters, $end);
+        return Str::words(trim(preg_replace('/<[^>]*>/',' ',$this->content)),$words,$end);
     }
 
     /**

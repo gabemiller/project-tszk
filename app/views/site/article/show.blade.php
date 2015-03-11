@@ -6,7 +6,8 @@
 @section('content')
 <div class="article">
 
-    <h1>{{$article->title}}</h1>
+    <p class="text-muted date">{{$article->getCreatedAt()}}</p>
+    <h1 class="title">{{HTML::link($article->getLink(),$article->title)}}</h1>
 
     <div class="article-content">
         {{$article->content}}
@@ -32,7 +33,7 @@
     <div id="disqus_thread"></div>
     <script type="text/javascript">
         /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-        var disqus_shortname = 'encsgorkathu'; // required: replace example with your forum shortname
+        var disqus_shortname = 'spetertszk'; // required: replace example with your forum shortname
 
         /* * * DON'T EDIT BELOW THIS LINE * * */
         (function() {

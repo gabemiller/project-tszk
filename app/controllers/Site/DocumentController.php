@@ -29,11 +29,11 @@ class DocumentController extends \BaseController
             $doc = Document::whereHas('categories', function ($q) use($cat) {
                 $q->where('documentcategory_id', '=', $cat->id);
 
-            })->get();
+            })->orderBy('created_at','desc')->get();
 
 
         } else {
-            $doc = Document::all();
+            $doc = Document::orderBy('created_at','desc')->get();
         }
 
         $this->layout->content = View::make('site.document.index')

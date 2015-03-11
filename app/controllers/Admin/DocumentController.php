@@ -54,7 +54,8 @@ class DocumentController extends \BaseController {
 
             $rules = array(
                 'name' => 'required|unique:document',
-                'file' => 'required'
+                'file' => 'required',
+                'category' => 'required'
             );
 
             $validation = Validator::make(Input::all(), $rules);
@@ -142,6 +143,7 @@ class DocumentController extends \BaseController {
 
             $rules = array(
                 'name' => 'required|unique:document,name,' . $id,
+                'category' => 'required'
             );
 
             $validation = Validator::make(Input::all(), $rules);

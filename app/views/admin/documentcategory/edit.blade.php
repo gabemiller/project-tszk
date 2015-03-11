@@ -29,7 +29,7 @@
                     <div class="form-group">
                         {{Form::label('parent_id', 'Szülő kategória',array('class'=>'col-lg-2 control-label'))}}
                         <div class="col-lg-2">
-                            {{Form::selection('parent_id', $categories,array('class'=>'form-control'),$docCategory->parent)}}
+                            {{Form::select('parent_id', $categories,null,array('class'=>'form-control'),$docCategory->parent)}}
                         </div>
                     </div>
                     <div class="form-group">
