@@ -43,7 +43,7 @@ class DocumentCategory extends \Eloquent {
      * @param type $id
      * @return type
      */
-    public static function getCategories($id = 0, $default = false) {
+    public static function getCategories($id = 0, $default = true) {
 
         if($default) {
             $array = array(0 => 'Nincs');
