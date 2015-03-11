@@ -2,9 +2,15 @@
 
         <div class="container">
             <div class="row">
-                 <div class="">
-
+                 <div class="col-xs-4">
+                    <h2 class="info"><strong>Telefon</strong><br>+36 (48) 423-245</h2>
                  </div>
+                <div class="col-xs-4">
+                    <h2 class="info"><strong>Fax</strong><br>+36 (48) 345-528</h2>
+                </div>
+                <div class="col-xs-4">
+                    <h2 class="info"><strong>Email</strong><br>{{HTML::mailto('terszock@vipmail.hu')}}</h2>
+                </div>
             </div>
         </div>
 
