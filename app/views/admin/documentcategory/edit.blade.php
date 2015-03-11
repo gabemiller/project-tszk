@@ -26,10 +26,10 @@
                 </div>
                 <div class="box-body">
 
-                    <div class="form-group">
+                    <div class="form-group hidden">
                         {{Form::label('parent_id', 'Szülő kategória',array('class'=>'col-lg-2 control-label'))}}
                         <div class="col-lg-2">
-                            {{Form::select('parent_id', $categories,$docCategory->parent,array('class'=>'form-control'))}}
+                            {{Form::select('parent_id', $categories,null,array('class'=>'form-control'))}}
                         </div>
                     </div>
                     <div class="form-group">

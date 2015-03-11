@@ -23,7 +23,7 @@
                 </div>
                 <div class="box-body">
 
-                    <div class="form-group">
+                    <div class="form-group hidden">
                         {{Form::label('parent_id', 'Szülő kategória',array('class'=>'control-label'))}}
                         <div>
                             {{Form::select('parent_id', $categories,null,array('class'=>'form-control'));}}
@@ -57,9 +57,9 @@
                                 <tr>
                                     <th class="table-col-xs sorter-false filter-false"><input type="checkbox" id="checkAll"></th>
                                     <th class="table-col-xs">Az</th>
-                                    <th class="table-col-xs">Sz_Az</th>
                                     <th>Név</th>
                                     <th>Létrehozva</th>
+                                    <th>Módosítva</th>
                                     <th class="table-col-xs sorter-false filter-false">Beállítások</th>
                                 </tr>           
                             </thead>
