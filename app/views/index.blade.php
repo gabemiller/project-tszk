@@ -55,6 +55,7 @@
                 @endforeach
             @endif
 
+            <!--
             <h3 class="sidebar-title">Képek a galériánkból <span class="title-arrow"></span></h3>
             @if(count($pictures))
                 <div class="side-gallery">
@@ -72,6 +73,7 @@
                     </div>
                 </div>
             @endif
+            -->
         </div>
     </div>
 
