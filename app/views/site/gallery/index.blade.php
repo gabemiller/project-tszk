@@ -1,4 +1,4 @@
-@extend('_frontend.master')
+@extends('_frontend.master')
 @section('breadcrumb')
 {{ HTML::decode(Breadcrumbs::render('galeriak.index')) }}
 @stop
