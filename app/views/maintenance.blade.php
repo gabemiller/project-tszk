@@ -6,7 +6,7 @@
 
 
     <link href="/assets/favicon.ico" rel="icon" type="image/x-icon"/>
-    <title>{{Setting::get('site-title')}} @if(!empty($title)) {{'- '.$title }} @endif</title>
+    <title>{{Config::get('globals.title')}} - {{$title or ''}}</title>
 
     <!--[if lt IE 9]>
     {{ HTML::script('//html5shim.googlecode.com/svn/trunk/html5.js') }}
@@ -25,9 +25,9 @@
         <div class="row">
             <div class="col-xs-12">
                 <i class="fa fa-warning fa-5x"></i>
-                <h2>{{Setting::get('site-title')}}</h2>
+                <h2>{{Config::get('globals.title')}}</h2>
                 <h2>Weboldalunk jelenleg karbantartás alatt áll.<br>Kérem látogasson vissza később!</h2>
-                <img class="img-responsive" src="{{URL::to('assets/tszk.jpg')}}" alt="{{Setting::get('site-title')}}">
+                <img class="img-responsive" src="{{URL::to('assets/tszk.jpg')}}" alt="{{Config::get('globals.title')}}">
             </div>
         </div>
     </div>

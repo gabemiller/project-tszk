@@ -6,7 +6,7 @@
 
 
     <link href="/assets/favicon.ico" rel="icon" type="image/x-icon"/>
-    <title>{{Setting::get('site-title')}} @if(!empty($title)) {{'- '.$title }} @endif</title>
+    <title>{{Config::get('globals.title')}} - {{$title or ''}}</title>
 
     <!--[if lt IE 9]>
     {{ HTML::script('//html5shim.googlecode.com/svn/trunk/html5.js') }}
