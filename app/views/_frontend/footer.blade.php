@@ -9,7 +9,7 @@
                     <h2 class="info"><strong>Fax</strong><br>+36 (48) 345-528</h2>
                 </div>
                 <div class="col-xs-4">
-                    <h2 class="info"><strong>Email</strong><br>{{HTML::mailto('terszock@vipmail.hu')}}</h2>
+                    <h2 class="info"><strong>Email</strong><br>{{HTML::mailto('peteri.szocialis@gmail.com')}}</h2>
                 </div>
             </div>
         </div>

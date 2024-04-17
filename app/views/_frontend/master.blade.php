@@ -23,7 +23,6 @@
 @include('_frontend.lightbox')
 @include('_frontend.header')
 <div class="container main-container">
-
     <div class="row">
         <div class="col-xs-12">
             <div class="main-content">
@@ -31,6 +30,7 @@
             </div>
         </div>
     </div>
+    <div id="gdpr_%s"></div>
 </div>
 @include('_frontend.footer')
 
@@ -38,6 +38,8 @@
 {{ HTML::script('js/jquery-2.1.1.min.js'); }}
 {{ HTML::script('js/bootstrap.min.js'); }}
 {{ HTML::script('js/divide.min.js'); }}
+
+<script>$(function(){ $('#gdpr_statement').load('https://api.gdpreg.hu/v1/statement/7461f963-5214-46ee-9629-27eb7d79580e'); });</script>
 
 </body>
 </html>
