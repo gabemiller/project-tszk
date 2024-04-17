@@ -30,7 +30,7 @@
             </div>
         </div>
     </div>
-    <div id="gdpr_%s"></div>
+    <div id="gdpr_statement"></div>
 </div>
 @include('_frontend.footer')
 
